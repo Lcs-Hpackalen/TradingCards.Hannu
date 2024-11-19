@@ -6,6 +6,14 @@
 //
 
 import SwiftUI
+struct HockeyPlayer{
+    let position: String
+    let shoots: String
+    let points: Int
+    let TOI: String
+    let signature = ("player signature")
+    let signatureview: Image
+}
 
 struct HockeyCard: View {
     var body: some View {
