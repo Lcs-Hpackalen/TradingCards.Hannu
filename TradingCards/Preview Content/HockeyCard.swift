@@ -7,21 +7,28 @@
 
 import SwiftUI
 
-struct HockeyCardView: View {
+struct HockeyCard: View {
     var body: some View {
         VStack{
             ZStack{
                 Color
                     .blue
-                    .blur(radius: 15)
+                    .blur(radius: 10)
                     .padding(EdgeInsets(top: 0, leading: 1, bottom: 0, trailing: 1))
+                Color
+                    .white
+                    .frame(width: 350, height: 460)
+                Color
+                    .blue
+                    .frame(width: 325, height: 400)
                 VStack{
                     Text("Mitch Marner")
+                        .padding(EdgeInsets(top: 30, leading: 0, bottom: 0, trailing: 0))
                         .font(.title)
                         .colorScheme(.light)
-                    Image(.mitchView)
+                    Image(.mitchview)
                         .resizable()
-                        .frame(width: 100, height: 100)
+                        .frame(width: 300, height: 440)
                 }
                 HStack{
                     Spacer(minLength: 100)
@@ -30,29 +37,34 @@ struct HockeyCardView: View {
                         Text("#16")
                             .font(.title)
                             .fontWeight(.bold)
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                         Spacer()
                     }
                 }
             }
             Text("Toronto MapleLeafs")
-                .padding(EdgeInsets(top: 0, leading: 0, bottom:0, trailing: 2))
+                .font(.title)
+                .padding(EdgeInsets(top: 0, leading: 0, bottom:0, trailing: 100))
             HStack{
                 VStack{
                     Text("Position: Winger")
+                        .fontWeight(.semibold)
                     Text("Shoots: Right")
+                        .fontWeight(.semibold)
                     Text("Points 23/24: 85")
+                        .fontWeight(.semibold)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
                     Text("Player signature")
-                    Image(.playerSignature)
+                        .fontWeight(.bold)
+                    Image(.signatureview)
                         .resizable()
                 }
                 ZStack{
                     RoundedRectangle(cornerRadius: 30)
-                        .fill(Color.white)
-                        .fill()
-                        .frame(width: 100, height: 100)
+                        .frame(width: 220, height: 280)
                         .blur(radius: 10)
+                        .foregroundStyle(.tint)
+                        .border(.black, width: 3)
                     VStack{
                         Text("Fun Fact")
                             .font(.title)
@@ -65,5 +77,5 @@ struct HockeyCardView: View {
     }
 }
 #Preview {
-    HockeyCardView()
+    HockeyCard()
 }
